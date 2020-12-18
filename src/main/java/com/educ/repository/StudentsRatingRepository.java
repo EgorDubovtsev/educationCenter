@@ -1,9 +1,11 @@
 package com.educ.repository;
 
+import com.educ.entity.Student;
+
 import java.util.Map;
 
 public interface StudentsRatingRepository {
-    Map<Integer, int[]> getStudentsRating();
+    Map<Student, int[]> getStudentsRating();
 
-    void setStudentsRating(Map<Integer, int[]> studentsRating);
+    void setStudentsRating(Map<Student, int[]> studentsRating);
 }

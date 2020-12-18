@@ -3,10 +3,21 @@ package com.educ.entity;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class SimpleEducationProgram implements EducationProgram {
     private String programName;
-    private List<Course> courses = new LinkedList<>();
+    private final List<Course> courses = new LinkedList<>();
+    private int durationInDays;
+
+    @Override
+    public int getDurationInDays() {
+        if (durationInDays == 0) {
+            durationInDays = courses.stream().mapToInt(Course::getDuration).sum() / 8;
+        }
+
+        return durationInDays;
+    }
 
     @Override
     public List<Course> getCourses() {
@@ -26,6 +37,11 @@ public class SimpleEducationProgram implements EducationProgram {
     @Override
     public void addCourse(Course course) {
         courses.add(course);
+    }
+
+    @Override
+    public String toString() {
+        return courses.stream().map(course -> course.toString() + "\n").collect(Collectors.joining());
     }
 
     @Override

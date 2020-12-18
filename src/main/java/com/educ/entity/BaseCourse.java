@@ -9,6 +9,10 @@ public class BaseCourse implements Course {
         this.durationInHours = durationInHours;
     }
 
+    @Override
+    public String toString() {
+        return courseName + "\t\t" + durationInHours;
+    }
 
     @Override
     public String getCourseName() {

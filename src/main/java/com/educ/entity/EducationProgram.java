@@ -10,4 +10,6 @@ public interface EducationProgram {
     void setProgramName(String programName);
 
     void addCourse(Course course);
+
+    int getDurationInDays();
 }

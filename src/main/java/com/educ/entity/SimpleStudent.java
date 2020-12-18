@@ -68,6 +68,11 @@ public class SimpleStudent implements Student {
     }
 
     @Override
+    public String toString() {
+        return id + " " + name + " " + surname;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -77,6 +82,7 @@ public class SimpleStudent implements Student {
         if (id != that.id) return false;
         if (!Objects.equals(name, that.name)) return false;
         if (!Objects.equals(surname, that.surname)) return false;
+
         return Objects.equals(educationProgram, that.educationProgram);
     }
 
@@ -86,6 +92,7 @@ public class SimpleStudent implements Student {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (surname != null ? surname.hashCode() : 0);
         result = 31 * result + (educationProgram != null ? educationProgram.hashCode() : 0);
+
         return result;
     }
 }

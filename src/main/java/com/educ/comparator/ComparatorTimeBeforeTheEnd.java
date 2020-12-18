@@ -6,7 +6,7 @@ import com.educ.service.StudentStatusService;
 import java.util.Comparator;
 
 public class ComparatorTimeBeforeTheEnd implements Comparator<Student> {
-    private StudentStatusService  studentStatusService;
+    private StudentStatusService studentStatusService;
 
     public ComparatorTimeBeforeTheEnd(StudentStatusService studentStatusService) {
         this.studentStatusService = studentStatusService;

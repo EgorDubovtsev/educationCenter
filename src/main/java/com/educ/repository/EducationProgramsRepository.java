@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface EducationProgramsRepository {
     List<EducationProgram> getAllPrograms();
+
     void addProgram(EducationProgram program);
 
 }
