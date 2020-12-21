@@ -39,8 +39,9 @@ public class Main {
         secondEducationProgram.setProgramName("Second Education Program");
 
         EducationProgramsRepository educationProgramsRepository = new SimpleEducationProgramRepository();
-        educationProgramsRepository.addProgram(firstEducationProgram);
-        educationProgramsRepository.addProgram(secondEducationProgram);
+        EducationProgramService educationProgramService = new SimpleEducationProgramService(educationProgramsRepository);
+        educationProgramService.addProgram(firstEducationProgram);
+        educationProgramService.addProgram(secondEducationProgram);
 
         StudentsRatingRepository studentsRatingRepository = new SimpleStudentsRatingRepository();
 
