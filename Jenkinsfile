@@ -9,15 +9,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-
-                git 'https://github.com/EgorDubovtsev/educationCenter.git'
-
                 bat "mvn clean package"
-
-
             }
-
-
         }
     }
 }
