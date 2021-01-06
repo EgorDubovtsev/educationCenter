@@ -25,6 +25,12 @@
     <profiles>
         <profile>
             <id>jenkins</id>
+            <properties>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>${project.artifactId}</artifactId>
+                <version>${project.version}</version>
+                <packaging>${project.packaging}</packaging>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
@@ -57,7 +63,9 @@
                                     <goal>install-file</goal>
                                 </goals>
                                 <configuration>
-                                    <file>${project.build.directory}/${project.build.finalName}-${BUILD_NUMBER}.${project.packaging}</file>
+                                    <file>
+                                        ${project.build.directory}/${project.build.finalName}-${BUILD_NUMBER}.${project.packaging}
+                                    </file>
                                 </configuration>
                             </execution>
                         </executions>
@@ -66,12 +74,12 @@
             </build>
         </profile>
     </profiles>
-<dependencies>
-    <dependency>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.2.0</version>
-    </dependency>
-</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+    </dependencies>
 
 </project>
