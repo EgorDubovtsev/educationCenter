@@ -6,7 +6,10 @@
 
     <groupId>org.example</groupId>
     <artifactId>educationCenter</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${BUILD_NUMBER</version>
+    <properties>
+        <BUILD_NUMBER>1.1</BUILD_NUMBER>
+    </properties>
     <build>
         <plugins>
             <plugin>
@@ -28,6 +31,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-jar-plugin</artifactId>
                         <version>3.2.0</version>
+
                         <executions>
                             <execution>
                                 <id>generate-version</id>
