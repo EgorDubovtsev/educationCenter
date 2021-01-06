@@ -1,10 +1,23 @@
 pipeline {
-	agent any
+    agent any
+
+    tools {
+        maven 'maven'
+        jdk 'jdk8'
+    }
+
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                bat './mvnw clean compile'
+
+                git 'https://github.com/EgorDubovtsev/educationCenter.git'
+
+                bat "mvn clean package"
+
+
             }
+
+
         }
     }
 }
